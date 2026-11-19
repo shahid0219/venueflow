@@ -243,7 +243,7 @@ export default function Events() {
               <tbody>
                 {rows.map((event) => {
                   const fill = event.slots_total
-                    ? Math.round((event.slots_filled / event.slots_total) * 100)
+                    ? Math.round(((event.slots_filled ?? 0) / event.slots_total) * 100)
                     : 0;
                   return (
                     <tr key={event.id}>

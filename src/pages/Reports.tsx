@@ -90,7 +90,8 @@ export default function Reports() {
         }
       />
 
-      <Card className="card-pad" style={{ marginBottom: 16 }}>
+      <div style={{ marginBottom: 16 }}>
+      <Card className="card-pad">
         <div className="toolbar" style={{ marginBottom: 0 }}>
           <div className="stack-sm">
             <label className="tiny subtle" htmlFor="report-from">
@@ -134,6 +135,7 @@ export default function Reports() {
           </span>
         </div>
       </Card>
+      </div>
 
       {reports.error ? <ErrorNote message={reports.error} onRetry={reports.reload} /> : null}
 

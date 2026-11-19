@@ -154,7 +154,7 @@ export default function Incidents() {
   async function quickStatus(incident: Incident, status: string) {
     if (status === 'resolved' && !incident.resolution) {
       openEdit(incident);
-      push('Add a resolution note to close this incident', 'info');
+      push('Add a resolution note to close this incident');
       return;
     }
     try {
