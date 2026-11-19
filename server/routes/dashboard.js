@@ -125,7 +125,7 @@ dashboardRouter.get('/', (req, res) => {
            FROM attendance at WHERE at.user_id = @user_id
              AND at.checked_in_at IS NOT NULL AND at.checked_out_at IS NOT NULL) AS hours`,
     )
-    .get({ user_id: userId });
+    .get({ user_id: userId, now });
 
   const attendanceTotal = num(attendance.present) + num(attendance.late) + num(attendance.absent);
   const attendanceRate = attendanceTotal
