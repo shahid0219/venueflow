@@ -34,7 +34,7 @@ async function request(pathname, { method = 'GET', body, authenticated = true, r
 
   for (const value of response.headers.getSetCookie?.() ?? []) {
     const pair = value.split(';')[0];
-    if (pair.startsWith('venueflow_session=')) cookie = pair;
+    if (pair.startsWith('vf_session=')) cookie = pair;
   }
 
   if (raw) return response;
