@@ -1,0 +1,14 @@
+node_modules/
+dist/
+data/
+*.log
+
+# TypeScript incremental build caches (never commit)
+*.tsbuildinfo
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
+
+# Local environment files (never commit)
+.env
+.env.*
+.DS_Store

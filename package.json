@@ -1,0 +1,37 @@
+{
+  "name": "venueflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VenueFlow — event operations management for venues, events, volunteers, shifts, attendance, tasks and incidents.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"node --watch server/index.js\" \"vite\"",
+    "dev:api": "node --watch server/index.js",
+    "build": "tsc -b && vite build",
+    "start": "node server/index.js",
+    "seed": "node server/seed.js",
+    "seed:reset": "node server/seed.js --force",
+    "typecheck": "tsc -b --noEmit false --emitDeclarationOnly false",
+    "test": "node --test server/tests/*.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "express": "^5.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  }
+}
