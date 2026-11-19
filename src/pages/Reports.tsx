@@ -58,7 +58,7 @@ export default function Reports() {
         } catch {
           /* non-JSON error body */
         }
-        throw new ApiError(message, response.status);
+        throw new ApiError(response.status, message);
       }
       const blob = await response.blob();
       const stamp = new Date().toISOString().slice(0, 10);

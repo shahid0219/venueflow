@@ -380,7 +380,12 @@ export default function Volunteers() {
                 minLength={2}
               />
             </Field>
-            <Field label="Email" htmlFor="vol-email" required={!editing}>
+            <Field
+              label="Email"
+              htmlFor="vol-email"
+              required={!editing}
+              hint={editing ? 'Emails cannot be changed after sign-up.' : undefined}
+            >
               <TextInput
                 id="vol-email"
                 type="email"
@@ -388,7 +393,6 @@ export default function Volunteers() {
                 onChange={(event) => setForm({ ...form, email: event.target.value })}
                 disabled={Boolean(editing)}
                 required={!editing}
-                hint={editing ? 'Emails cannot be changed after sign-up.' : undefined}
               />
             </Field>
             {!editing ? (
