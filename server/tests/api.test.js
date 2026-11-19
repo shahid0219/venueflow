@@ -110,9 +110,10 @@ test('login rejects bad credentials and accepts the seeded admin', async () => {
 test('dashboard statistics come from the database', async () => {
   const { status, body } = await request('/api/dashboard');
   assert.equal(status, 200);
-  assert.ok(body.stats, 'dashboard returns stats');
-  assert.ok(body.stats.events_total >= 1, 'seeded events are counted');
-  assert.equal(typeof body.stats.volunteers_active, 'number');
+  assert.ok(body.totals, 'dashboard returns totals');
+  assert.ok(body.totals.events_total >= 1, 'seeded events are counted');
+  assert.equal(typeof body.totals.volunteers, 'number');
+  assert.equal(typeof body.attendance.records, 'number');
 });
 
 test('venue creation validates capacity and persists', async () => {
